@@ -2,7 +2,7 @@
 
 Longitudinal personal health store with MCP access, Apple Health pattern alerts, and narrative digests. Public, configurable, and free of any one person's private subjects or tooling.
 
-This repository used to ship as `screddy-health` (digest/alert engine only). It now mirrors the architecture of a private health-corpus deployment: durable Postgres storage, subject-scoped windows and trends, MCP tools, plus the existing HAE monitor and twice-weekly digest pipelines.
+This repository is the public **Health Corpus** (formerly `screddy-health`). It ships durable Postgres storage, subject-scoped windows and trends, MCP tools, plus HAE monitor and twice-weekly digest pipelines.
 
 ## What it does
 
@@ -45,8 +45,8 @@ Private personal deployments (for example Shawn's Corpus) stay separate. This pa
 ### Install
 
 ```bash
-git clone https://github.com/Screddyice/screddy-health
-cd screddy-health
+git clone https://github.com/Screddyice/health-corpus
+cd health-corpus
 uv sync --extra dev
 cp .env.example .env
 cp config/subjects.example.yaml config/subjects.yaml

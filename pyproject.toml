@@ -54,9 +54,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Screddyice/screddy-health"
-Repository = "https://github.com/Screddyice/screddy-health"
-Issues = "https://github.com/Screddyice/screddy-health/issues"
+Homepage = "https://github.com/Screddyice/health-corpus"
+Repository = "https://github.com/Screddyice/health-corpus"
+Issues = "https://github.com/Screddyice/health-corpus/issues"
 
 [project.scripts]
 health-corpus-migrate = "health_corpus.migrations.__main__:main"
