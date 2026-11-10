@@ -1,0 +1,67 @@
+# Health Corpus subject registry.
+# Copy to subjects.yaml (or point HEALTH_CORPUS_SUBJECTS_CONFIG at your file).
+#
+# Each subject is isolated by id. Metrics list the physical readings the
+# corpus windows and trends will load. Sources must match what your ingest
+# writers store (default HAE monitor writes source=apple_health).
+
+subjects:
+  - id: self
+    display_name: Me
+    species: human
+    sources:
+      - apple_health
+    include_mental_health: true
+    metrics:
+      step_count:
+        label: Steps
+        aggregate: sum
+        unit: count
+      distance_walking_running:
+        label: Distance
+        aggregate: sum
+        unit: km
+      flights_climbed:
+        label: Flights climbed
+        aggregate: sum
+        unit: count
+      walking_speed:
+        label: Walking speed
+        aggregate: avg
+        unit: m/s
+      walking_asymmetry_percentage:
+        label: Gait asymmetry
+        aggregate: avg
+        unit: percent
+      active_energy:
+        label: Active energy
+        aggregate: sum
+        unit: kcal
+      apple_exercise_time:
+        label: Exercise
+        aggregate: sum
+        unit: min
+      heart_rate_variability:
+        label: HRV
+        aggregate: avg
+        unit: ms
+      resting_heart_rate:
+        label: Resting heart rate
+        aggregate: avg
+        unit: bpm
+      blood_oxygen_saturation:
+        label: Blood oxygen
+        aggregate: avg
+        unit: percent
+      sleep_analysis:
+        label: Sleep
+        aggregate: sum
+        unit: hours
+      respiratory_rate:
+        label: Respiratory rate
+        aggregate: avg
+        unit: breaths_per_min
+      basal_body_temperature:
+        label: Wrist temperature
+        aggregate: avg
+        unit: celsius
