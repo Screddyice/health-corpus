@@ -1,15 +1,15 @@
 [Unit]
-Description=Daily Apple Health watchdog — analysis + emergency edge-trigger
+Description=Health Corpus daily monitor — analysis + tiered edge-trigger alerts
 After=network.target
 
 [Service]
 Type=oneshot
 # Adjust paths for your install. %h expands to the running user's home directory.
-EnvironmentFile=%h/screddy-health/.env
-WorkingDirectory=%h/screddy-health
-ExecStart=%h/.local/bin/uv run python -m screddy.agents.health_monitor
-StandardOutput=append:%h/logs/health-monitor.log
-StandardError=append:%h/logs/health-monitor.log
+EnvironmentFile=%h/health-corpus/.env
+WorkingDirectory=%h/health-corpus
+ExecStart=%h/.local/bin/uv run python -m health_corpus.agents.health_monitor
+StandardOutput=append:%h/logs/health-corpus-monitor.log
+StandardError=append:%h/logs/health-corpus-monitor.log
 
 [Install]
 WantedBy=default.target

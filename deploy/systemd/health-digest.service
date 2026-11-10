@@ -1,15 +1,14 @@
 [Unit]
-Description=Twice-weekly Apple Health narrative digest via Screddy /chat
+Description=Health Corpus twice-weekly narrative digest
 After=network.target
 
 [Service]
 Type=oneshot
-# Adjust paths for your install. %h expands to the running user's home directory.
-EnvironmentFile=%h/screddy-health/.env
-WorkingDirectory=%h/screddy-health
-ExecStart=%h/.local/bin/uv run python -m screddy.agents.health_digest
-StandardOutput=append:%h/logs/health-digest.log
-StandardError=append:%h/logs/health-digest.log
+EnvironmentFile=%h/health-corpus/.env
+WorkingDirectory=%h/health-corpus
+ExecStart=%h/.local/bin/uv run python -m health_corpus.agents.health_digest
+StandardOutput=append:%h/logs/health-corpus-digest.log
+StandardError=append:%h/logs/health-corpus-digest.log
 
 [Install]
 WantedBy=default.target
