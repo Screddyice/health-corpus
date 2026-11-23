@@ -120,6 +120,16 @@ uv sync --extra dev
 uv run pytest
 ```
 
+## CI
+
+Crow CI runs `.woodpecker.yaml` on every push and pull request. On
+`ghcr.io/astral-sh/uv:python3.12-bookworm` it installs the locked dependencies
+with `uv sync --frozen --extra dev` and runs `uv run pytest -q`. The tests use
+synthetic fixtures and mock Health Auto Export, Telegram and OpenAI, so the
+pipeline needs no secrets and never reads real health data. A green
+`ci/crow/pr/woodpecker` status on a pull request's head commit is the merge
+check.
+
 ## License
 
 MIT — see `LICENSE`.

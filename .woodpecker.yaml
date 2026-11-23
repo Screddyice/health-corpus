@@ -1,0 +1,13 @@
+# Crow CI: runs the test suite on every push and pull request.
+# Tests use synthetic fixtures and mocked HAE / Telegram / OpenAI only.
+# No secrets, no network services and no real health data are used here.
+steps:
+  test:
+    image: ghcr.io/astral-sh/uv:python3.12-bookworm
+    environment:
+      UV_LINK_MODE: copy
+    commands:
+      - uv sync --frozen --extra dev
+      - uv run pytest -q
+when:
+  event: [push, pull_request, manual]
